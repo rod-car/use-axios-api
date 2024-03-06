@@ -5,7 +5,7 @@ An API utility based on axios for making REST API calls in React applications.
 ## Installation
 
 ```javascript
-npm install @rod-car/use-api@0.0.1-beta
+npm install @rod-car/use-api
 ```
 
 ## Usage
@@ -15,7 +15,8 @@ import { useApi } from '@rod-car/use-api';
 
 // Example usage
 const api = useApi({
-  url: 'https://api.example.com/resource',
+  baseUrl: 'https://example.com'
+  url: '/resource',
   key: 'data',
 });
 
@@ -35,8 +36,9 @@ api.Client.destroy(1); // Delete a record
 Initialize the API utility.
 
 - `options`:
+  - `baseUrl` (string): Base URL of the resources. It is optional.
   - `url` (string): URL of the resource excluding the base URL.
-  - `key` (string): Key containing the data returned by the server.
+  - `key` (string): Key containing the data returned by the server. It is optional.
 
 Returns an object with the following properties:
 
